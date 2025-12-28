@@ -28,7 +28,7 @@ export const VintageGallery: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <ScrollReveal delay={0}>
                 <div className="relative group overflow-hidden border-4 border-white/10 shadow-lg rotate-1 hover:rotate-0 transition-all duration-500 bg-white">
-                    <img src="/images/affiche%201977.jpeg" alt="Affiche Catch Beauvais 1977" className="w-full h-auto sepia contrast-125 opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/affiche%201977.jpeg" alt="Affiche Catch Beauvais 1977" className="w-full h-auto contrast-125 opacity-90 hover:opacity-100 transition-opacity" />
                     
                     {/* Dust Overlay Effect */}
                     <div 
@@ -42,7 +42,7 @@ export const VintageGallery: React.FC = () => {
             
             <ScrollReveal delay={200}>
                 <div className="relative group overflow-hidden border-4 border-white/10 shadow-lg -rotate-1 hover:rotate-0 transition-all duration-500 bg-white md:mt-12">
-                    <img src="/images/affiche%201992.jpeg" alt="Affiche Catch Beauvais 1992" className="w-full h-auto grayscale contrast-125 opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/affiche%201992.jpeg" alt="Affiche Catch Beauvais 1992" className="w-full h-auto contrast-125 opacity-90 hover:opacity-100 transition-opacity" />
                     
                     {/* Dust Overlay Effect */}
                     <div 

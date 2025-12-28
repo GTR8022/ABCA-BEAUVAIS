@@ -13,7 +13,7 @@ export const President: React.FC = () => {
                 <div className="relative group">
                     {/* Cadre Photo */}
                     <div className="absolute inset-0 border-2 border-abca-gold transform translate-x-3 translate-y-3"></div>
-                    <div className="relative overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl">
+                    <div className="relative overflow-hidden hover:scale-105 transition-all duration-700 shadow-2xl">
                         {/* On utilise la photo de famille pour illustrer la lignée */}
                         <img 
                             src="/images/famillecamille.jpg" 

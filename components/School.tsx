@@ -20,7 +20,7 @@ export const School: React.FC = () => {
                         <img 
                             src="/images/ecole.jpg" 
                             alt="Entraînement École de Catch ABCA" 
-                            className="relative w-full h-auto grayscale contrast-125 shadow-2xl border border-neutral-700"
+                            className="relative w-full h-auto contrast-125 shadow-2xl border border-neutral-700 hover:scale-105 transition-all duration-700"
                         />
                         <div className="absolute top-0 left-0 bg-abca-red text-white font-header font-bold px-4 py-2 uppercase tracking-wider">
                             Chapitre Final : 2025

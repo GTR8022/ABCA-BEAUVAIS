@@ -34,7 +34,7 @@ export const Header: React.FC = () => {
                 muted
                 playsInline
                 // Poster optionnel pour le chargement
-                className={`w-full h-full object-cover opacity-60 grayscale contrast-125 transition-all duration-100 ${glitchActive ? 'animate-glitch-snap' : ''}`}
+                className={`w-full h-full object-cover opacity-60 contrast-125 transition-all duration-100 ${glitchActive ? 'animate-glitch-snap' : ''}`}
             >
                 <source src="/videos/hero-catch.mp4" type="video/mp4" />
                 Votre navigateur ne supporte pas la balise vidéo.

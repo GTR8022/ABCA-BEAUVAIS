@@ -13,7 +13,7 @@ export const History: React.FC = () => {
                   <img 
                     src="/images/famillecamille.jpg" 
                     alt="La Famille Grignon - ABCA Beauvais" 
-                    className="w-full h-auto sepia-[.3] contrast-110 group-hover:sepia-0 transition-all duration-500"
+                    className="w-full h-auto contrast-110 group-hover:scale-105 transition-all duration-500"
                   />
                   <div className="absolute -bottom-4 -right-4 bg-abca-red text-white font-header font-bold py-2 px-6 text-xl shadow-lg">
                     La Tradition Grignon
