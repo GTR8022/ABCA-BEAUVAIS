@@ -20,10 +20,10 @@ export const School: React.FC = () => {
                         <img 
                             src="/images/ecole.jpg" 
                             alt="Entraînement École de Catch ABCA" 
-                            className="relative w-full h-auto grayscale contrast-125 shadow-2xl border border-neutral-700 hover:grayscale-0 transition-all duration-700"
+                            className="relative w-full h-auto grayscale contrast-125 shadow-2xl border border-neutral-700"
                         />
-                        <div className="absolute top-0 left-0 bg-abca-gold text-black font-header font-bold px-4 py-2 uppercase tracking-wider">
-                            Tous les mercredis & vendredis
+                        <div className="absolute top-0 left-0 bg-abca-red text-white font-header font-bold px-4 py-2 uppercase tracking-wider">
+                            Chapitre Final : 2025
                         </div>
                     </div>
                 </ScrollReveal>
@@ -33,34 +33,24 @@ export const School: React.FC = () => {
             <div className="w-full md:w-1/2 order-1 md:order-2">
                 <ScrollReveal delay={200}>
                     <h2 className="font-header text-3xl md:text-5xl font-bold uppercase text-white mb-6">
-                        L'École des <span className="text-abca-red">Champions</span>
+                        L'Héritage de <span className="text-abca-red">l'École</span>
                     </h2>
                     <h3 className="text-xl text-gray-400 font-bold mb-6 uppercase tracking-wide">
-                        Formation - Discipline - Respect
+                        1956 — 2025
                     </h3>
                     
                     <p className="text-gray-300 text-lg mb-6 leading-relaxed">
-                        L'ABCA, ce n'est pas seulement des galas. C'est aussi une <strong>école de catch réputée à Beauvais</strong> qui forme la nouvelle génération depuis des décennies.
+                        Pendant près de sept décennies, l'ABCA a été le coeur battant de la formation du catch en France. Notre école a vu passer des centaines d'athlètes, forgeant des corps et des esprits sous la bannière du respect et de la discipline.
+                    </p>
+
+                    <p className="text-gray-300 text-lg mb-6 leading-relaxed italic border-l-4 border-abca-gold pl-6">
+                        "En 2025, une page historique se tourne. L'école de catch de Beauvais ferme ses portes, laissant derrière elle un héritage immense et des souvenirs gravés dans la sciure et sur le ring."
                     </p>
                     
-                    <ul className="space-y-4 mb-8">
-                        <li className="flex items-start">
-                            <svg className="w-6 h-6 text-abca-gold mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span className="text-gray-300">Apprentissage de la chute et de la sécurité (Rolls, Bumps).</span>
-                        </li>
-                        <li className="flex items-start">
-                            <svg className="w-6 h-6 text-abca-gold mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span className="text-gray-300">Valeurs sportives : humilité, entraide et dépassement de soi.</span>
-                        </li>
-                        <li className="flex items-start">
-                            <svg className="w-6 h-6 text-abca-gold mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span className="text-gray-300">Ouvert aux jeunes dès 14 ans et aux adultes.</span>
-                        </li>
-                    </ul>
+                    <p className="text-gray-400 text-base mb-8">
+                        L'association continue toutefois sa mission principale : l'organisation de galas de catch professionnels et la préservation de ce patrimoine culturel unique.
+                    </p>
 
-                    <a href="#contact" className="inline-block text-abca-red border-b-2 border-abca-red pb-1 font-header font-bold uppercase hover:text-white hover:border-white transition-colors">
-                        Rejoindre l'école &rarr;
-                    </a>
                 </ScrollReveal>
             </div>
 

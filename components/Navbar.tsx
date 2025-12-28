@@ -19,9 +19,8 @@ export const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: 'Histoire', href: '#histoire' },
-    { name: 'École', href: '#ecole' }, // Requires ID in School component
+    { name: 'L\'École', href: '#ecole' }, // Requires ID in School component
     { name: 'Services', href: '#services' },
-    { name: 'Légendes', href: '#legendes' },
     { name: 'Contact', href: '#contact' },
   ];
 

@@ -4,10 +4,9 @@ const sections = [
   { id: 'accueil', label: 'Accueil' },
   { id: 'histoire', label: 'Histoire' },
   { id: 'chronologie', label: 'Frise' },
-  { id: 'ecole', label: 'École' },
+  { id: 'ecole', label: 'L\'École' },
   { id: 'carte', label: 'Carte' },
   { id: 'services', label: 'Services' },
-  { id: 'legendes', label: 'Légendes' },
   { id: 'contact', label: 'Réserver / Devis', isCta: true },
 ];
 
