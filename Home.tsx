@@ -7,7 +7,6 @@ import { VintageGallery } from './components/VintageGallery';
 import { RegionalMap } from './components/RegionalMap';
 import { School } from './components/School';
 import { President } from './components/President';
-import { AudioPlayer } from './components/AudioPlayer';
 import { Services } from './components/Services';
 import { Testimonials } from './components/Testimonials';
 import { FAQ } from './components/FAQ';
@@ -34,7 +33,7 @@ const Home: React.FC = () => {
       <Services />
       <Testimonials />
       {/* Legends section removed as requested */}
-      <AudioPlayer />
+      
       <FAQ />
       <SocialWall />
       <Contact />
