@@ -39,8 +39,8 @@ export const Contact: React.FC = () => {
                       </svg>
                     </div>
                     <div>
-                        <span className="block text-xs text-gray-500 uppercase font-bold tracking-wider">Téléphone Direct</span>
-                        <a href="tel:0612345678" className="text-2xl font-header font-bold tracking-wide hover:text-abca-red transition-colors">06 12 34 56 78</a>
+                        <span className="block text-xs text-gray-500 uppercase font-bold tracking-wider">Téléphone</span>
+                        <a href="tel:0344456522" className="text-2xl font-header font-bold tracking-wide hover:text-abca-red transition-colors">03 44 45 65 22</a>
                     </div>
                   </div>
                   
@@ -52,7 +52,7 @@ export const Contact: React.FC = () => {
                     </div>
                     <div>
                         <span className="block text-xs text-gray-500 uppercase font-bold tracking-wider">Email</span>
-                        <a href="mailto:contact@abca-beauvais.fr" className="text-lg hover:text-abca-red transition-colors">contact@abca-beauvais.fr</a>
+                        <a href="mailto:GRIGNONcatchABCA@aol.com" className="text-lg hover:text-abca-red transition-colors">GRIGNONcatchABCA@aol.com</a>
                     </div>
                   </div>
 
@@ -65,7 +65,7 @@ export const Contact: React.FC = () => {
                     </div>
                     <div>
                          <span className="block text-xs text-gray-500 uppercase font-bold tracking-wider">Adresse</span>
-                        <span className="text-lg">Gymnase Municipal, 60000 Beauvais</span>
+                        <span className="text-lg">27 rue de Villers Saint Lucien, 60000 Beauvais</span>
                     </div>
                   </div>
                 </div>
