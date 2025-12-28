@@ -44,7 +44,7 @@ export const Timeline: React.FC = () => {
         <ScrollReveal>
           <div className="text-center mb-16">
             <h2 className="font-header text-5xl md:text-7xl font-bold uppercase text-white mb-4 italic">
-              L'Histoire <span className="text-abca-red">Violente</span>
+              L'Histoire
             </h2>
             <div className="h-1 w-24 bg-abca-gold mx-auto skew-x-[-12deg]"></div>
           </div>
