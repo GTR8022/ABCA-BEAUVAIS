@@ -119,7 +119,7 @@ export const QuickNav: React.FC = () => {
             
             {/* LEFT: Call Button (Always Visible) */}
             <a 
-                href="tel:0344456522" 
+                href="tel:0695060968" 
                 className="pointer-events-auto flex items-center justify-center w-14 h-14 bg-abca-red text-white rounded-full shadow-[0_4px_15px_rgba(230,0,0,0.6)] border-2 border-white animate-pulse-slow active:scale-95 transition-transform"
                 aria-label="Appeler maintenant"
             >

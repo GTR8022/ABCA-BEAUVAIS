@@ -25,7 +25,7 @@ export const MentionsLegales: React.FC = () => {
                     <li><strong>Siège social :</strong> 27 rue de Villers Saint Lucien, 60000 Beauvais</li>
                     <li><strong>Président :</strong> Olivier Grignon</li>
                     <li><strong>Email :</strong> GRIGNONcatchABCA@aol.com</li>
-                    <li><strong>Téléphone :</strong> 03 44 45 65 22</li>
+                    <li><strong>Téléphone :</strong> 06 95 06 09 68</li>
                 </ul>
             </section>
 

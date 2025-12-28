@@ -41,7 +41,7 @@ export const Contact: React.FC = () => {
                     </div>
                     <div>
                         <span className="block text-xs text-gray-500 uppercase font-bold tracking-wider">Téléphone</span>
-                        <a href="tel:0344456522" className="text-2xl font-header font-bold tracking-wide hover:text-abca-red transition-colors">03 44 45 65 22</a>
+                        <a href="tel:0695060968" className="text-2xl font-header font-bold tracking-wide hover:text-abca-red transition-colors">06 95 06 09 68</a>
                     </div>
                   </div>
                   

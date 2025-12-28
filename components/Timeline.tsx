@@ -5,25 +5,25 @@ const milestones = [
   {
     year: '1956',
     title: 'La Fondation',
-    description: 'Roger "Le Mur" pose les premières briques dans un garage humide. Pas de matelas, juste de la sciure, de la sueur et une passion dévorante. Les premiers galas se font à même le sol. C\'est le début de la légende.',
+    description: 'Monsieur Villeroy pose les premières briques dans les sous-sols du gymnase Pierre de Coubertin à Beauvais. Pas de matelas, juste de la sciure, de la sueur et une passion dévorante. C\'est le début de la légende.',
     image: '/images/fondation.jpeg'
   },
   {
-    year: '1978',
-    title: 'L\'Âge d\'Or',
-    description: 'Les salles des fêtes de l\'Oise sont pleines à craquer. L\'ABCA devient l\'usine à champions du Nord de la France. Le style est brutal, authentique, sans fioritures. Les héros locaux deviennent des icônes pour toute une génération.',
+    year: '1970',
+    title: 'Le Premier Ring',
+    description: 'Investissement historique pour le club : l\'achat du tout premier ring. Fini la sciure, place au professionnalisme. L\'ABCA devient l\'usine à champions du Nord de la France, remplissant les salles des fêtes de l\'Oise.',
     image: '/images/age%20dor.jpeg'
   },
   {
     year: '1995',
     title: 'New Generation',
-    description: 'Importation du premier ring américain à 6 côtés, une révolution technique. Le style change : les coups sont plus durs, le spectacle plus grand, les costumes plus colorés. L\'association se professionnalise.',
+    description: 'Une nouvelle ère s\'ouvre. Le style change, se modernise. Les coups sont plus durs, le spectacle plus grand, les costumes plus colorés. L\'association s\'adapte aux nouveaux standards du catch international.',
     image: '/images/new%20generation.jpeg'
   },
   {
     year: '2025',
     title: 'L\'Empire',
-    description: 'Plus de 30 dates par an. Une machine de guerre événementielle au service du divertissement populaire. Son, Lumières, Pyrotechnie : l\'ABCA est aujourd\'hui la référence incontournable du catch en Picardie.',
+    description: 'Plus de 30 dates par an. Une machine de guerre événementielle au service du divertissement populaire. Son, Lumières, Ambiance survoltée : l\'ABCA est aujourd\'hui la référence incontournable du catch en Picardie.',
     image: '/images/empire.jpeg'
   }
 ];
