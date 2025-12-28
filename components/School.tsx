@@ -18,9 +18,9 @@ export const School: React.FC = () => {
                     <div className="relative">
                         <div className="absolute inset-0 border-2 border-abca-red transform translate-x-4 translate-y-4"></div>
                         <img 
-                            src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?auto=format&fit=crop&q=80&w=800" 
-                            alt="Entraînement École de Catch" 
-                            className="relative w-full h-auto grayscale contrast-125 shadow-2xl border border-neutral-700"
+                            src="/images/ecole.jpg" 
+                            alt="Entraînement École de Catch ABCA" 
+                            className="relative w-full h-auto grayscale contrast-125 shadow-2xl border border-neutral-700 hover:grayscale-0 transition-all duration-700"
                         />
                         <div className="absolute top-0 left-0 bg-abca-gold text-black font-header font-bold px-4 py-2 uppercase tracking-wider">
                             Tous les mercredis & vendredis
