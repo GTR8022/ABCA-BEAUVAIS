@@ -25,10 +25,10 @@ export const VintageGallery: React.FC = () => {
         </div>
 
         {/* Masonry-like Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <ScrollReveal delay={0}>
                 <div className="relative group overflow-hidden border-4 border-white/10 shadow-lg rotate-1 hover:rotate-0 transition-all duration-500 bg-white">
-                    <img src="https://picsum.photos/id/100/400/600" alt="Affiche 1960" className="w-full h-auto sepia contrast-125 opacity-90 hover:opacity-100 transition-opacity" />
+                    <img src="/images/affiche%201977.jpeg" alt="Affiche Catch Beauvais 1977" className="w-full h-auto sepia contrast-125 opacity-90 hover:opacity-100 transition-opacity" />
                     
                     {/* Dust Overlay Effect */}
                     <div 
@@ -36,27 +36,13 @@ export const VintageGallery: React.FC = () => {
                         style={{ backgroundImage: `url("${dustEffect}")` }}
                     ></div>
                     
-                    <div className="absolute bottom-0 left-0 z-20 bg-black/70 text-white text-xs px-2 py-1 w-full text-center font-header">Gala 1964</div>
-                </div>
-            </ScrollReveal>
-            
-            <ScrollReveal delay={100}>
-                <div className="relative group overflow-hidden border-4 border-white/10 shadow-lg -rotate-2 hover:rotate-0 transition-all duration-500 bg-white mt-8">
-                    <img src="https://picsum.photos/id/200/400/500" alt="Affiche 1980" className="w-full h-auto grayscale contrast-125 opacity-90 hover:opacity-100 transition-opacity" />
-                    
-                    {/* Dust Overlay Effect */}
-                    <div 
-                        className="absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none mix-blend-overlay"
-                        style={{ backgroundImage: `url("${dustEffect}")` }}
-                    ></div>
-
-                    <div className="absolute bottom-0 left-0 z-20 bg-black/70 text-white text-xs px-2 py-1 w-full text-center font-header">Beauvais 1982</div>
+                    <div className="absolute bottom-0 left-0 z-20 bg-black/80 text-white text-sm px-3 py-2 w-full text-center font-header border-t-2 border-abca-gold">Gala Historique 1977</div>
                 </div>
             </ScrollReveal>
             
             <ScrollReveal delay={200}>
-                <div className="relative group overflow-hidden border-4 border-white/10 shadow-lg rotate-2 hover:rotate-0 transition-all duration-500 bg-white">
-                    <img src="https://picsum.photos/id/300/400/600" alt="Affiche 1990" className="w-full h-auto sepia-[.5] contrast-125 opacity-90 hover:opacity-100 transition-opacity" />
+                <div className="relative group overflow-hidden border-4 border-white/10 shadow-lg -rotate-1 hover:rotate-0 transition-all duration-500 bg-white md:mt-12">
+                    <img src="/images/affiche%201992.jpeg" alt="Affiche Catch Beauvais 1992" className="w-full h-auto grayscale contrast-125 opacity-90 hover:opacity-100 transition-opacity" />
                     
                     {/* Dust Overlay Effect */}
                     <div 
@@ -64,13 +50,13 @@ export const VintageGallery: React.FC = () => {
                         style={{ backgroundImage: `url("${dustEffect}")` }}
                     ></div>
 
-                    <div className="absolute bottom-0 left-0 z-20 bg-black/70 text-white text-xs px-2 py-1 w-full text-center font-header">Grand Prix 1995</div>
+                    <div className="absolute bottom-0 left-0 z-20 bg-black/80 text-white text-sm px-3 py-2 w-full text-center font-header border-t-2 border-abca-gold">L'Âge d'Or 1992</div>
                 </div>
             </ScrollReveal>
             
-             <ScrollReveal delay={300}>
-                <div className="relative group overflow-hidden border-4 border-white/10 shadow-lg -rotate-1 hover:rotate-0 transition-all duration-500 bg-white mt-12">
-                    <img src="https://picsum.photos/id/400/400/500" alt="Affiche 2000" className="w-full h-auto grayscale contrast-100 opacity-90 hover:opacity-100 transition-opacity" />
+            <ScrollReveal delay={400}>
+                <div className="relative group overflow-hidden border-4 border-abca-red shadow-[0_0_15px_rgba(216,0,0,0.5)] rotate-2 hover:rotate-0 transition-all duration-500 bg-white">
+                    <img src="/images/affiche%202025.jpg" alt="Affiche Catch Beauvais 2025" className="w-full h-auto contrast-110 opacity-100 hover:scale-105 transition-transform duration-500" />
                     
                     {/* Dust Overlay Effect */}
                     <div 
@@ -78,7 +64,7 @@ export const VintageGallery: React.FC = () => {
                         style={{ backgroundImage: `url("${dustEffect}")` }}
                     ></div>
 
-                    <div className="absolute bottom-0 left-0 z-20 bg-black/70 text-white text-xs px-2 py-1 w-full text-center font-header">Championnat 2004</div>
+                    <div className="absolute bottom-0 left-0 z-20 bg-abca-red text-white text-sm px-3 py-2 w-full text-center font-header font-bold uppercase tracking-widest">Prochain Gala 2025</div>
                 </div>
             </ScrollReveal>
         </div>
