@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ScrollReveal } from './ScrollReveal';
 
 export const Contact: React.FC = () => {
@@ -81,7 +82,7 @@ export const Contact: React.FC = () => {
                     <p className="text-gray-400 text-xs leading-relaxed mb-3">
                         Promoters & Wrestlers worldwide:
                     </p>
-                    <a href="mailto:GRIGNONcatchABCA@aol.com" className="text-white text-xs font-bold uppercase border-b border-white hover:text-abca-red hover:border-abca-red transition-colors">
+                    <a href="mailto:GRIGNONcatchABCA@aol.com" className="relative z-20 text-white text-xs font-bold uppercase border-b border-white hover:text-abca-red hover:border-abca-red transition-colors">
                         Contact Foreign Affairs
                     </a>
                 </div>
@@ -203,8 +204,8 @@ export const Contact: React.FC = () => {
         <div className="border-t border-neutral-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
           <p>&copy; {new Date().getFullYear()} ABCA Beauvais. Association Loi 1901.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white transition-colors">Mentions Légales</a>
-            <a href="#" className="hover:text-white transition-colors">Politique de Confidentialité</a>
+            <Link to="/mentions-legales" className="hover:text-white transition-colors">Mentions Légales</Link>
+            <Link to="/confidentialite" className="hover:text-white transition-colors">Politique de Confidentialité</Link>
           </div>
         </div>
       </div>
