@@ -27,17 +27,16 @@ export const Header: React.FC = () => {
       {/* Background with Ken Burns Effect containing Video */}
       <div className="absolute inset-0 z-0">
         <div className="relative w-full h-full animate-ken-burns">
-            {/* Vidéo en arrière-plan */}
+            {/* Vidéo en arrière-plan (Fichier Local MP4) */}
             <video
                 autoPlay
                 loop
                 muted
                 playsInline
-                poster="https://picsum.photos/id/1063/1920/1080" // Image de chargement
-                className={`w-full h-full object-cover opacity-50 grayscale contrast-125 transition-all duration-100 ${glitchActive ? 'animate-glitch-snap' : ''}`}
+                // Poster optionnel pour le chargement
+                className={`w-full h-full object-cover opacity-60 grayscale contrast-125 transition-all duration-100 ${glitchActive ? 'animate-glitch-snap' : ''}`}
             >
-                {/* Source vidéo : Boxe/Lutte rétro (Placeholder) */}
-                <source src="https://cdn.coverr.co/videos/coverr-boxing-training-in-black-and-white-5353/1080p.mp4" type="video/mp4" />
+                <source src="/videos/hero-catch.mp4" type="video/mp4" />
                 Votre navigateur ne supporte pas la balise vidéo.
             </video>
 
