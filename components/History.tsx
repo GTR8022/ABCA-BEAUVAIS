@@ -38,7 +38,7 @@ export const History: React.FC = () => {
               </p>
 
               <blockquote className="border-l-4 border-abca-red pl-4 italic text-xl text-white font-header mt-8">
-                "Nous ne vendons pas juste du sport, nous offrons des souvenirs inoubliables aux petits et grands."
+                "Nous ne proposons pas juste du sport, nous offrons des souvenirs inoubliables aux petits et grands."
               </blockquote>
             </ScrollReveal>
           </div>
