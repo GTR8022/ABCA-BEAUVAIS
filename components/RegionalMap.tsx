@@ -110,9 +110,12 @@ export const RegionalMap: React.FC = () => {
                     </ul>
                     
                     <div className="p-4 bg-neutral-900 border-l-4 border-abca-gold">
-                        <p className="font-header text-white uppercase font-bold text-xl">Notre Rayonnement</p>
-                        <p className="text-sm text-gray-500 mt-1">
-                            De la cathédrale de Beauvais aux petites salles communales du Vexin, le catch est chez lui partout.
+                        <p className="font-header text-white uppercase font-bold text-xl">Rayonnement Inclus</p>
+                        <p className="text-gray-300 mt-1 font-bold">
+                            Déplacement jusqu'à <span className="text-abca-red">200 km</span> autour de Beauvais.
+                        </p>
+                        <p className="text-xs text-gray-500 mt-2">
+                            Nous couvrons l'Oise, la Somme, l'Aisne, l'Île-de-France et la Normandie pour apporter le spectacle au plus près de votre commune.
                         </p>
                     </div>
                 </ScrollReveal>
