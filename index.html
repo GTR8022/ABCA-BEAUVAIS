@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ABCA Beauvais | Galas de Catch & École de Catch (Wrestling France)</title>
+    <meta name="description" content="Organisation de galas de catch dans l'Oise et en Picardie. Spectacles clé en main pour mairies. École de catch historique à Beauvais. Professional Wrestling in France." />
+    <meta name="keywords" content="Catch Beauvais, Gala de Catch, École de Catch, Wrestling France, French Wrestling Promotion, ABCA, Oise, Spectacle Mairie" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'abca-red': '#D80000', /* A bit darker, more "blood" red */
+              'abca-gold': '#FFD700', /* Sharp Gold */
+              'abca-blue': '#0022AA',
+              'abca-dark': '#050505', /* Pitch black */
+              'abca-gray': '#121212',
+            },
+            fontFamily: {
+              'header': ['Oswald', 'sans-serif'],
+              'body': ['Roboto', 'sans-serif'],
+            },
+            backgroundImage: {
+              'stripes': 'repeating-linear-gradient(45deg, #000, #000 10px, #111 10px, #111 20px)',
+              'stripes-red': 'repeating-linear-gradient(45deg, #D80000, #D80000 10px, #990000 10px, #990000 20px)',
+            },
+            animation: {
+              'ken-burns': 'kenburns 20s ease-out infinite alternate',
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'fade-in': 'fadeIn 0.3s ease-out forwards',
+              'shake': 'shake 0.5s cubic-bezier(.36,.07,.19,.97) both',
+              'glitch-snap': 'glitch-snap 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both',
+            },
+            keyframes: {
+              kenburns: {
+                '0%': { transform: 'scale(1)' },
+                '100%': { transform: 'scale(1.15)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              shake: {
+                '10%, 90%': { transform: 'translate3d(-1px, 0, 0)' },
+                '20%, 80%': { transform: 'translate3d(2px, 0, 0)' },
+                '30%, 50%, 70%': { transform: 'translate3d(-4px, 0, 0)' },
+                '40%, 60%': { transform: 'translate3d(4px, 0, 0)' },
+              },
+              'glitch-snap': {
+                '0%': { transform: 'translateX(0) skewX(0)', filter: 'none' },
+                '15%': { transform: 'translateX(-3px) skewX(-5deg)', filter: 'contrast(1.5) brightness(1.2)' },
+                '30%': { transform: 'translateX(3px) skewX(3deg)', filter: 'sepia(1) saturate(2) hue-rotate(90deg)' },
+                '45%': { transform: 'translateX(-3px) skewX(-3deg)', filter: 'contrast(1.5) brightness(0.8)' },
+                '60%': { transform: 'translateX(2px) skewX(2deg)', filter: 'sepia(0.5) hue-rotate(-90deg)' },
+                '75%': { transform: 'translateX(0) skewX(0)', filter: 'none' },
+                '100%': { transform: 'translateX(0) skewX(0)', filter: 'none' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      html {
+        scroll-padding-top: 80px;
+        background-color: #050505;
+      }
+      
+      /* Aggressive Typography Utilities */
+      .text-outline {
+        -webkit-text-stroke: 1px #fff;
+        color: transparent;
+      }
+      .text-outline-red {
+        -webkit-text-stroke: 1px #D80000;
+        color: transparent;
+      }
+      .text-outline-gold {
+         -webkit-text-stroke: 1px #FFD700;
+         color: transparent;
+      }
+      
+      /* Hard Shadows */
+      .hard-shadow {
+        box-shadow: 8px 8px 0px 0px rgba(216, 0, 0, 0.8);
+      }
+      .hard-shadow-gold {
+        box-shadow: 8px 8px 0px 0px rgba(255, 215, 0, 0.8);
+      }
+      
+      .clip-diagonal {
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+      }
+
+      /* Scrollbar */
+      ::-webkit-scrollbar {
+        width: 14px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #000; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #D80000; 
+        border: 2px solid #000;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #ff0000; 
+      }
+
+      :focus-visible {
+        outline: 2px solid #FFD700;
+        outline-offset: 4px;
+        z-index: 50;
+      }
+      
+      .leaflet-popup-content-wrapper, .leaflet-popup-tip {
+        background: #000 !important;
+        color: white !important;
+        border: 2px solid #D80000;
+        border-radius: 0px !important;
+        font-family: 'Oswald', sans-serif !important;
+        text-transform: uppercase;
+      }
+
+      /* Noise Overlay Global */
+      .noise-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 9999;
+        opacity: 0.05;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
+      }
+
+      /* Logo Shadow */
+      .logo-shadow img {
+        filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
+      }
+    </style>
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  "name": "ABCA Beauvais",
+  "alternateName": "Association Beauvaisienne de Catch et d'Athlétisme",
+  "sport": "Professional Wrestling",
+  "url": "https://abca-beauvais.fr",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Gymnase Municipal",
+    "addressLocality": "Beauvais",
+    "postalCode": "60000",
+    "addressCountry": "FR"
+  }
+}
+</script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "leaflet": "https://esm.sh/leaflet@^1.9.4"
+  }
+}
+</script>
+</head>
+  <body class="bg-abca-dark text-white font-body antialiased selection:bg-abca-gold selection:text-black">
+    <div id="root"></div>
+    <!-- Point d'entrée VITE pour le déploiement -->
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
