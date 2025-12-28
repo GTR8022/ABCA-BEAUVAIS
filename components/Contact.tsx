@@ -81,7 +81,7 @@ export const Contact: React.FC = () => {
                     <p className="text-gray-400 text-xs leading-relaxed mb-3">
                         Promoters & Wrestlers worldwide:
                     </p>
-                    <a href="mailto:booking@abca-beauvais.fr" className="text-white text-xs font-bold uppercase border-b border-white hover:text-abca-red hover:border-abca-red transition-colors">
+                    <a href="mailto:GRIGNONcatchABCA@aol.com" className="text-white text-xs font-bold uppercase border-b border-white hover:text-abca-red hover:border-abca-red transition-colors">
                         Contact Foreign Affairs
                     </a>
                 </div>
@@ -198,19 +198,6 @@ export const Contact: React.FC = () => {
              </ScrollReveal>
           </div>
 
-        </div>
-
-        {/* SEO / Intervention Zone */}
-        <div className="border-t border-neutral-800 pt-8 pb-8">
-            <h4 className="text-gray-500 font-bold uppercase text-xs mb-4 text-center tracking-widest">Zone d'intervention</h4>
-            <div className="text-center">
-                <p className="text-white font-header text-xl md:text-2xl uppercase tracking-wider mb-2">
-                    Déplacement jusqu'à <span className="text-abca-red font-bold">200 km</span> autour de Beauvais
-                </p>
-                <p className="text-gray-500 text-sm">
-                    Hauts-de-France &bull; Île-de-France &bull; Normandie &bull; Grand-Est
-                </p>
-            </div>
         </div>
 
         <div className="border-t border-neutral-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
