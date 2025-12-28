@@ -6,25 +6,25 @@ const milestones = [
     year: '1956',
     title: 'La Fondation',
     description: 'Roger "Le Mur" pose les premières briques dans un garage humide. Pas de matelas, juste de la sciure, de la sueur et une passion dévorante. Les premiers galas se font à même le sol. C\'est le début de la légende.',
-    image: 'https://images.unsplash.com/photo-1518619740986-50863745443a?auto=format&fit=crop&q=80&w=800&h=600'
+    image: '/images/fondation.jpeg'
   },
   {
     year: '1978',
     title: 'L\'Âge d\'Or',
     description: 'Les salles des fêtes de l\'Oise sont pleines à craquer. L\'ABCA devient l\'usine à champions du Nord de la France. Le style est brutal, authentique, sans fioritures. Les héros locaux deviennent des icônes pour toute une génération.',
-    image: 'https://images.unsplash.com/photo-1544298534-f8de4f2d713a?auto=format&fit=crop&q=80&w=800&h=600'
+    image: '/images/age%20dor.jpeg'
   },
   {
     year: '1995',
     title: 'New Generation',
     description: 'Importation du premier ring américain à 6 côtés, une révolution technique. Le style change : les coups sont plus durs, le spectacle plus grand, les costumes plus colorés. L\'association se professionnalise.',
-    image: 'https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&q=80&w=800&h=600'
+    image: '/images/new%20generation.jpeg'
   },
   {
-    year: '2024',
+    year: '2025',
     title: 'L\'Empire',
     description: 'Plus de 30 dates par an. Une machine de guerre événementielle au service du divertissement populaire. Son, Lumières, Pyrotechnie : l\'ABCA est aujourd\'hui la référence incontournable du catch en Picardie.',
-    image: 'https://images.unsplash.com/photo-1517466787929-bc90951d6dbb?auto=format&fit=crop&q=80&w=800&h=600'
+    image: '/images/empire.jpeg'
   }
 ];
 
