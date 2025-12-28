@@ -202,9 +202,14 @@ export const Contact: React.FC = () => {
 
         {/* SEO / Intervention Zone */}
         <div className="border-t border-neutral-800 pt-8 pb-8">
-            <h4 className="text-gray-500 font-bold uppercase text-xs mb-4 text-center tracking-widest">Zone d'intervention prioritaires</h4>
-            <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs text-neutral-600 text-center leading-relaxed font-header">
-                <span>Beauvais</span> &bull; <span>Compiègne</span> &bull; <span>Creil</span> &bull; <span>Nogent-sur-Oise</span> &bull; <span>Senlis</span> &bull; <span>Crépy-en-Valois</span> &bull; <span>Méru</span> &bull; <span>Noyon</span> &bull; <span>Montataire</span> &bull; <span>Pont-Sainte-Maxence</span> &bull; <span>Chantilly</span> &bull; <span>Clermont</span> &bull; <span>Gouvieux</span> &bull; <span>Lamorlaye</span> &bull; <span>Chambly</span> &bull; <span>Margny-lès-Compiègne</span> &bull; <span>Liancourt</span> &bull; <span>Villers-Saint-Paul</span>
+            <h4 className="text-gray-500 font-bold uppercase text-xs mb-4 text-center tracking-widest">Zone d'intervention</h4>
+            <div className="text-center">
+                <p className="text-white font-header text-xl md:text-2xl uppercase tracking-wider mb-2">
+                    Déplacement jusqu'à <span className="text-abca-red font-bold">200 km</span> autour de Beauvais
+                </p>
+                <p className="text-gray-500 text-sm">
+                    Hauts-de-France &bull; Île-de-France &bull; Normandie &bull; Grand-Est
+                </p>
             </div>
         </div>
 
