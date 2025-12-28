@@ -9,14 +9,14 @@ export const History: React.FC = () => {
           
           <div className="w-full md:w-1/2">
              <ScrollReveal>
-                <div className="relative border-4 border-abca-gold p-2 shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-500">
+                <div className="relative border-4 border-abca-gold p-2 shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-500 group">
                   <img 
-                    src="https://picsum.photos/id/40/800/600" 
-                    alt="Catch vintage noir et blanc" 
-                    className="w-full h-auto grayscale contrast-125"
+                    src="/images/famille.jpeg" 
+                    alt="La Famille Grignon - ABCA Beauvais" 
+                    className="w-full h-auto sepia-[.3] contrast-110 group-hover:sepia-0 transition-all duration-500"
                   />
-                  <div className="absolute -bottom-4 -right-4 bg-abca-red text-white font-header font-bold py-2 px-6 text-xl">
-                    L'Esprit Old School
+                  <div className="absolute -bottom-4 -right-4 bg-abca-red text-white font-header font-bold py-2 px-6 text-xl shadow-lg">
+                    La Tradition Grignon
                   </div>
                 </div>
             </ScrollReveal>
