@@ -16,8 +16,8 @@ export const President: React.FC = () => {
                     <div className="relative overflow-hidden hover:scale-105 transition-all duration-700 shadow-2xl">
                         {/* On utilise la photo de famille pour illustrer la lignée */}
                         <img 
-                            src="/images/famillecamille.jpg" 
-                            alt="Olivier Grignon et sa famille - ABCA Beauvais" 
+                            src="/images/olivier.jpeg" 
+                            alt="Olivier Grignon - Président ABCA Beauvais" 
                             className="w-full h-auto object-cover"
                         />
                     </div>

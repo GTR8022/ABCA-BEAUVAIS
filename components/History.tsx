@@ -11,7 +11,7 @@ export const History: React.FC = () => {
              <ScrollReveal>
                 <div className="relative border-4 border-abca-gold p-2 shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-500 group">
                   <img 
-                    src="/images/famillecamille.jpg" 
+                    src="/images/GENERATION.jpeg" 
                     alt="La Famille Grignon - ABCA Beauvais" 
                     className="w-full h-auto contrast-110 group-hover:scale-105 transition-all duration-500"
                   />
