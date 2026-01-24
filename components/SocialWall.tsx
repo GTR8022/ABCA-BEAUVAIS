@@ -17,20 +17,20 @@ export const SocialWall: React.FC = () => {
           <h2 className="font-header text-3xl md:text-4xl font-bold uppercase mb-8">
             Suivez l'Actualité <span className="text-abca-gold">En Direct</span>
           </h2>
-          
-          <div className="max-w-xl mx-auto w-full flex justify-center">
+
+          <div className="w-full flex justify-center">
             {/* 
               Container responsive pour le plugin Facebook
             */}
-            <div 
-              className="fb-page bg-white rounded-sm shadow-[0_0_20px_rgba(20,20,255,0.4)]" 
-              data-href="https://www.facebook.com/ABCAcatch/" 
-              data-tabs="timeline" 
-              data-width="500" 
-              data-height="600" 
-              data-small-header="false" 
-              data-adapt-container-width="true" 
-              data-hide-cover="false" 
+            <div
+              className="fb-page bg-white rounded-sm shadow-[0_0_20px_rgba(20,20,255,0.4)] w-full md:max-w-[500px]"
+              data-href="https://www.facebook.com/ABCAcatch/"
+              data-tabs="timeline"
+              data-width="500"
+              data-height="600"
+              data-small-header="false"
+              data-adapt-container-width="true"
+              data-hide-cover="false"
               data-show-facepile="true"
             >
               <blockquote cite="https://www.facebook.com/ABCAcatch/" className="fb-xfbml-parse-ignore">
@@ -38,7 +38,7 @@ export const SocialWall: React.FC = () => {
               </blockquote>
             </div>
           </div>
-          
+
           <p className="mt-6 text-gray-400 text-sm">
             Rejoignez notre communauté sur les réseaux sociaux pour ne manquer aucun événement dans l'Oise.
           </p>
