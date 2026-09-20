@@ -30,29 +30,32 @@ robots.
 > la fonction bascule automatiquement sur l'ancien circuit FormSubmit. Le
 > formulaire n'est donc jamais coupé pendant la mise en place.
 
-## Ce qu'il reste à faire (2 étapes)
+## État : en service depuis le 20 septembre 2026
 
-### 1. Activer l'envoi depuis le domaine
+L'envoi authentifié est **actif en production**. Vérification :
 
-Sur le tableau de bord Vercel du projet `abca-beauvais` :
-**Integrations** → chercher **Resend** → *Add Integration* (offre gratuite :
-3 000 mails/mois, très au-dessus des besoins).
+```
+curl https://catchfrancais.fr/api/contact
+{"ok":true,"envoi":"resend","expediteur":"ABCA Beauvais <contact@catchfrancais.fr>"}
+```
 
-L'intégration crée le compte et ajoute automatiquement la variable
-`RESEND_API_KEY` au projet. Aucune clé à copier à la main.
+Si `envoi` repasse un jour à `formsubmit (repli)`, c'est que la variable
+`RESEND_API_KEY` a disparu du projet Vercel (ou qu'un déploiement est plus
+ancien que son ajout) : le formulaire continue de fonctionner, mais les mails
+repartent du serveur partagé et risquent à nouveau le dossier indésirables.
 
-Puis, dans Resend : **Domains** → *Add Domain* → `catchfrancais.fr`.
-Resend affiche alors 2 ou 3 enregistrements DNS (DKIM, SPF, éventuellement
-DMARC). Le DNS de `catchfrancais.fr` étant géré par Vercel, ces enregistrements
-peuvent être ajoutés directement — il suffit de les transmettre.
+Enregistrements DNS en place sur `catchfrancais.fr` :
 
-Une fois le domaine vérifié (quelques minutes), **redéployer le site** : les
-mails partiront de `contact@catchfrancais.fr`.
+| Type | Nom | Rôle |
+|---|---|---|
+| TXT | `resend._domainkey` | clé publique DKIM (signature des messages) |
+| TXT | `send` | SPF (`v=spf1 include:amazonses.com ~all`) |
+| MX | `send` | retours et plaintes (`feedback-smtp.eu-west-1.amazonses.com`) |
 
-### 2. Nettoyer l'historique dans la boîte AOL
+## Ce qu'il reste à faire, une seule fois, dans la boîte AOL
 
 Indispensable : les anciens messages classés en spam continuent d'influencer le
-filtre.
+filtre, même si l'expéditeur a changé.
 
 1. Dossier **Courrier indésirable** → ouvrir chaque demande de gala → cliquer
    **« Ce n'est pas du spam »**.
