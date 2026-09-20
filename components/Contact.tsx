@@ -10,36 +10,23 @@ export const Contact: React.FC = () => {
     setFormStatus('submitting');
 
     const formData = new FormData(e.target as HTMLFormElement);
-
-    // --- Anti-spam / delivrabilite ---
-    // Les emojis dans l'objet et dans les noms de champs sont un signal de spam
-    // tres fort pour AOL/Yahoo : le mail partait dans les indesirables.
-    // On construit ici un objet clair, lisible et sans emoji.
-    const organisateur = (formData.get('Organisateur') as string) || '';
-    const ville = (formData.get('Ville') as string) || '';
-    const email = (formData.get('email') as string) || '';
-
-    formData.set(
-      '_subject',
-      `Demande de gala - ${ville || 'ville a preciser'} - ${organisateur || 'organisateur'}`
-    );
-    // Permet de repondre directement a l'organisateur depuis la boite mail,
-    // et donne un Reply-To legitime au message (meilleure reputation).
-    if (email) formData.set('_replyto', email);
+    const donnees = Object.fromEntries(formData.entries());
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/GRIGNONcatchABCA@aol.com", {
-        method: "POST",
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
+      // La demande passe par notre propre fonction serveur (api/contact.js),
+      // qui envoie le mail depuis contact@catchfrancais.fr. Un expediteur sur
+      // notre domaine, signe DKIM, n'est plus classe en indesirable par AOL.
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(donnees)
       });
 
       if (response.ok) {
         setFormStatus('success');
       } else {
-        alert("Une erreur est survenue. Veuillez réessayer ou nous contacter par téléphone.");
+        const { erreur } = await response.json().catch(() => ({ erreur: '' }));
+        alert(erreur || "Une erreur est survenue. Veuillez réessayer ou nous contacter par téléphone.");
         setFormStatus('idle');
       }
     } catch (error) {
@@ -165,15 +152,11 @@ export const Contact: React.FC = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  {/* Hidden Fields for Email Configuration */}
-                  {/* L'objet reel est calcule dans handleSubmit (ville + organisateur). */}
-                  <input type="hidden" name="_subject" value="Demande de gala - ABCA Beauvais" />
-                  <input type="hidden" name="_template" value="table" />
-                  <input type="hidden" name="_captcha" value="false" />
+                  {/* L'objet du mail, le modele et le destinataire sont geres
+                      cote serveur dans api/contact.js. */}
 
                   {/* Piege a robots : invisible pour un humain, rempli par les bots.
-                      FormSubmit jette silencieusement ces envois. Moins de spam recu
-                      = meilleure reputation de l'expediteur aupres d'AOL. */}
+                      Le serveur ignore silencieusement ces envois. */}
                   <input
                     type="text"
                     name="_honey"
@@ -188,11 +171,11 @@ export const Contact: React.FC = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-1">
                       <label htmlFor="f-organisateur" className="block text-xs font-bold text-gray-400 uppercase tracking-wider">Nom de l'organisateur *</label>
-                      <input id="f-organisateur" required type="text" name="Organisateur" placeholder="Ex: Jean Dupont" className="w-full bg-neutral-800 border border-neutral-700 text-white px-4 py-3 focus:outline-none focus:border-abca-red focus:ring-1 focus:ring-abca-red transition-all" />
+                      <input id="f-organisateur" required type="text" name="organisateur" placeholder="Ex: Jean Dupont" className="w-full bg-neutral-800 border border-neutral-700 text-white px-4 py-3 focus:outline-none focus:border-abca-red focus:ring-1 focus:ring-abca-red transition-all" />
                     </div>
                     <div className="space-y-1">
                       <label htmlFor="f-structure" className="block text-xs font-bold text-gray-400 uppercase tracking-wider">Mairie / Comité *</label>
-                      <input id="f-structure" required type="text" name="Structure" placeholder="Ex: Mairie de Beauvais" className="w-full bg-neutral-800 border border-neutral-700 text-white px-4 py-3 focus:outline-none focus:border-abca-red focus:ring-1 focus:ring-abca-red transition-all" />
+                      <input id="f-structure" required type="text" name="structure" placeholder="Ex: Mairie de Beauvais" className="w-full bg-neutral-800 border border-neutral-700 text-white px-4 py-3 focus:outline-none focus:border-abca-red focus:ring-1 focus:ring-abca-red transition-all" />
                     </div>
                   </div>
 
@@ -203,24 +186,24 @@ export const Contact: React.FC = () => {
                     </div>
                     <div className="space-y-1">
                       <label htmlFor="f-telephone" className="block text-xs font-bold text-gray-400 uppercase tracking-wider">Téléphone *</label>
-                      <input id="f-telephone" required type="tel" name="Telephone" placeholder="06 00 00 00 00" className="w-full bg-neutral-800 border border-neutral-700 text-white px-4 py-3 focus:outline-none focus:border-abca-red focus:ring-1 focus:ring-abca-red transition-all" />
+                      <input id="f-telephone" required type="tel" name="telephone" placeholder="06 00 00 00 00" className="w-full bg-neutral-800 border border-neutral-700 text-white px-4 py-3 focus:outline-none focus:border-abca-red focus:ring-1 focus:ring-abca-red transition-all" />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-1">
                       <label htmlFor="f-date" className="block text-xs font-bold text-gray-400 uppercase tracking-wider">Date Souhaitée</label>
-                      <input id="f-date" type="date" name="Date souhaitee" className="w-full bg-neutral-800 border border-neutral-700 text-white px-4 py-3 focus:outline-none focus:border-abca-red focus:ring-1 focus:ring-abca-red transition-all text-gray-400" />
+                      <input id="f-date" type="date" name="date" className="w-full bg-neutral-800 border border-neutral-700 text-white px-4 py-3 focus:outline-none focus:border-abca-red focus:ring-1 focus:ring-abca-red transition-all text-gray-400" />
                     </div>
                     <div className="space-y-1">
                       <label htmlFor="f-ville" className="block text-xs font-bold text-gray-400 uppercase tracking-wider">Ville de l'événement *</label>
-                      <input id="f-ville" required type="text" name="Ville" placeholder="Ex: Clermont" className="w-full bg-neutral-800 border border-neutral-700 text-white px-4 py-3 focus:outline-none focus:border-abca-red focus:ring-1 focus:ring-abca-red transition-all" />
+                      <input id="f-ville" required type="text" name="ville" placeholder="Ex: Clermont" className="w-full bg-neutral-800 border border-neutral-700 text-white px-4 py-3 focus:outline-none focus:border-abca-red focus:ring-1 focus:ring-abca-red transition-all" />
                     </div>
                   </div>
 
                   <div className="space-y-1">
                     <label htmlFor="f-public" className="block text-xs font-bold text-gray-400 uppercase tracking-wider">Nombre d'invités estimé</label>
-                    <select id="f-public" name="Nombre d invites" className="w-full bg-neutral-800 border border-neutral-700 text-white px-4 py-3 focus:outline-none focus:border-abca-red focus:ring-1 focus:ring-abca-red transition-all appearance-none">
+                    <select id="f-public" name="public" className="w-full bg-neutral-800 border border-neutral-700 text-white px-4 py-3 focus:outline-none focus:border-abca-red focus:ring-1 focus:ring-abca-red transition-all appearance-none">
                       <option>Moins de 200</option>
                       <option>200 - 500</option>
                       <option>500 - 1000</option>
@@ -230,7 +213,7 @@ export const Contact: React.FC = () => {
 
                   <div className="space-y-1">
                     <label htmlFor="f-message" className="block text-xs font-bold text-gray-400 uppercase tracking-wider">Votre Message (Détails, questions...)</label>
-                    <textarea id="f-message" rows={4} name="Message" placeholder="Bonjour, nous souhaiterions organiser un gala pour la fête communale..." className="w-full bg-neutral-800 border border-neutral-700 text-white px-4 py-3 focus:outline-none focus:border-abca-red focus:ring-1 focus:ring-abca-red transition-all"></textarea>
+                    <textarea id="f-message" rows={4} name="message" placeholder="Bonjour, nous souhaiterions organiser un gala pour la fête communale..." className="w-full bg-neutral-800 border border-neutral-700 text-white px-4 py-3 focus:outline-none focus:border-abca-red focus:ring-1 focus:ring-abca-red transition-all"></textarea>
                   </div>
 
                   <button

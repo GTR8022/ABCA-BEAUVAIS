@@ -19,7 +19,7 @@ export const MentionsLegales: React.FC = () => {
             <section>
                 <h2 className="text-2xl text-white font-bold mb-4">1. Éditeur du site</h2>
                 <p>
-                    Le site internet <strong>abca-beauvais.fr</strong> est édité par l'<strong>Association Beauvaisienne de Catch et d'Athlétisme (ABCA)</strong>, association régie par la loi du 1er juillet 1901.
+                    Le site internet <strong>catchfrancais.fr</strong> est édité par l'<strong>Association Beauvaisienne de Catch et d'Athlétisme (ABCA)</strong>, association régie par la loi du 1er juillet 1901.
                 </p>
                 <ul className="mt-4 space-y-2 list-disc list-inside">
                     <li><strong>Siège social :</strong> 27 rue de Villers Saint Lucien, 60000 Beauvais</li>
