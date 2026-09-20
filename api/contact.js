@@ -119,8 +119,18 @@ async function envoiViaResend(donnees, destinataire, sujet) {
 }
 
 export default async function handler(req, res) {
+  // Point de controle : permet de verifier d'un coup d'oeil quel circuit
+  // d'envoi est actif, sans envoyer de mail. Ne revele aucune valeur secrete.
+  if (req.method === 'GET') {
+    return res.status(200).json({
+      ok: true,
+      envoi: process.env.RESEND_API_KEY ? 'resend' : 'formsubmit (repli)',
+      expediteur: process.env.CONTACT_FROM || EXPEDITEUR_PAR_DEFAUT,
+    });
+  }
+
   if (req.method !== 'POST') {
-    res.setHeader('Allow', 'POST');
+    res.setHeader('Allow', 'GET, POST');
     return res.status(405).json({ ok: false, erreur: 'Methode non autorisee' });
   }
 
