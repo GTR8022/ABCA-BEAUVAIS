@@ -56,7 +56,7 @@ export const FAQ: React.FC = () => {
                                     id={`faq-answer-${index}`}
                                     role="region"
                                     aria-labelledby={`faq-question-${index}`}
-                                    className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}
+                                    className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-[32rem] opacity-100' : 'max-h-0 opacity-0'}`}
                                 >
                                     <div className="p-4 md:p-6 pt-0 text-gray-400 border-t border-neutral-800 leading-relaxed">
                                         {item.answer}
